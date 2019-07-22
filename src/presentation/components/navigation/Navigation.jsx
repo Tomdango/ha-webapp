@@ -16,6 +16,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Badge } from '@material-ui/core';
+import { homepage } from '../../../../package.json';
 
 const Drawer = ({ onClose, onOpen, open, uninitializedNodes }) => {
   const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
@@ -38,7 +39,7 @@ const Drawer = ({ onClose, onOpen, open, uninitializedNodes }) => {
         <Divider />
         <Link
           className="sidebar-links"
-          to="/areas"
+          to={`${homepage}/areas`}
           onClick={onClose}
           as={ListItem}
         >
@@ -49,7 +50,7 @@ const Drawer = ({ onClose, onOpen, open, uninitializedNodes }) => {
         </Link>
         <Link
           className="sidebar-links"
-          to="/nodes"
+          to={`${homepage}/nodes`}
           onClick={onClose}
           as={ListItem}
         >
@@ -60,7 +61,18 @@ const Drawer = ({ onClose, onOpen, open, uninitializedNodes }) => {
         </Link>
         <Link
           className="sidebar-links"
-          to="/setup"
+          to={`${homepage}/routines`}
+          onClick={onClose}
+          as={ListItem}
+        >
+          <ListItem button>
+            <ListItemIcon>{/* <MailIcon /> */}</ListItemIcon>
+            <ListItemText primary="Routines" />
+          </ListItem>
+        </Link>
+        <Link
+          className="sidebar-links"
+          to={`${homepage}/setup`}
           onClick={onClose}
           as={ListItem}
         >

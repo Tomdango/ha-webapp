@@ -20,6 +20,7 @@ import TempHistoryPanel from '../components/cards/TempHistoryPanel';
 import AssignedNodesPanel from '../components/cards/AssignedNodesPanel';
 import AssignNode from '../components/dialogs/AssignNode';
 import { fetchAllNodes } from '../../redux/actions/nodeActions';
+import { homepage } from '../../../package.json';
 
 class AreaConfigView extends Component {
   static propTypes = {
@@ -77,7 +78,7 @@ class AreaConfigView extends Component {
     const { match, deleteArea, history } = this.props;
     const { id } = match.params;
     deleteArea(id);
-    history.push('/areas');
+    history.push(`${homepage}/areas`);
   };
 
   deleteRoutine = routineId => {
@@ -165,7 +166,7 @@ class AreaConfigView extends Component {
               <Button
                 size="large"
                 variant="outlined"
-                onClick={() => history.push('/areas')}
+                onClick={() => history.push(`${homepage}/areas`)}
               >
                 Back
               </Button>

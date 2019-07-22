@@ -1,5 +1,5 @@
-const apiRoot = 'http://localhost:3000/api/';
-const webSocketRoot = 'ws://localhost:3000/datafeed/';
+const apiRoot = `http://${window.location.hostname}:3000/api/`;
+const webSocketRoot = `ws://${window.location.hostname}:3000/datafeed/`;
 
 export const area = {
   all: `${apiRoot}areas`,

@@ -11,7 +11,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableBody from '@material-ui/core/TableBody';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-
+import { homepage } from '../../../../package.json';
 import { fetchNodeInfo } from '../../../redux/actions/nodeActions';
 
 class RoomCard extends Component {
@@ -66,7 +66,7 @@ class RoomCard extends Component {
                     style={{ padding: 0, paddingRight: 10 }}
                   >
                     <Link
-                      to={`/nodes/${data.id}`}
+                      to={`${homepage}/nodes/${data.id}`}
                       onClick={() => this.setActiveNode(data.id, data.name)}
                       style={{ textDecoration: 'none' }}
                     >

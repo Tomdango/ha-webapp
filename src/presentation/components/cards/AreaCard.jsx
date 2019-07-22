@@ -5,6 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
 import SettingsIcon from '@material-ui/icons/Settings';
 import { withRouter } from 'react-router-dom';
+import { homepage } from '../../../../package.json';
 
 const AreaCard = ({
   areaId,
@@ -24,7 +25,7 @@ const AreaCard = ({
     temperatureDiff = temperature - targetTemperature;
   }
   const handleSettingsClick = () => {
-    history.push(`/areas/${areaId}`);
+    history.push(`${homepage}/areas/${areaId}`);
   };
   return (
     <Card>

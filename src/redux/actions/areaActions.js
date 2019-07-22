@@ -3,6 +3,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import * as types from '../types/areaTypes';
 import { area } from '../../core/constants/routes';
+import { homepage } from '../../../package.json';
 
 export const getAreaStatus = () => {
   return dispatch => {
@@ -36,7 +37,7 @@ export const createArea = (name, browserHistory, callback) => {
         const { document } = response.data;
         dispatch({ type: types.AREA_SUCCESSFULLY_CREATED, payload: document });
         dispatch(closeNewAreaDialog());
-        browserHistory.push(`/areas/${document.areaId}`);
+        browserHistory.push(`${homepage}/areas/${document.areaId}`);
         callback();
       })
       .catch(err => {
